@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+
+	<style>
+		.user_card {
+			width: 350px;
+			margin-top: auto;
+			margin-bottom: auto;
+			background: #74cfbf;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
+			}
+
+		#form-title{
+			color: #fff;
+			}
+		.login_btn {
+			width: 40%;
+			background: #f7ba5b !important;
+			color: white !important;
+			}
+		.login_btn:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+	</style>
+
+	<title>Create Task</title>
+
+</head>
+<body style="background-color:lightcyan;">
+
+<br><br><br>
+	
+	<div class="user_card">
+		<h3 id="form-title"> To-Do <small>List</small> </h3>
+		<br>
+		<form method = "POST">
+		{% csrf_token %}
+
+			<input class="form-control" type="text" placeholder="Enter Your Task.." name="task" required>
+			<br>
+			<input type="submit" class="btn login_btn" value="Add Task">
+		</form>
+		<hr>
+		{% if messages %}
+			{% for message in messages %}
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+					{{ message }}
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			{% endfor %}
+		{% endif %}
+	</div>
+</body>
+{% endblock %}

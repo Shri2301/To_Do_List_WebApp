@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<head>
+	<title>View Tasks </title>
+
+	<style>
+		.striker {
+		  text-decoration: line-through;
+		}
+
+		#customers th {
+	 		padding-top: 15px;
+ 	 		padding-bottom: 15px;
+			background-color: #74cfbf;
+			color: black;
+		}
+
+		.table {
+			width: 100%;
+			max-width: 600px;
+			background: white;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
+		}
+		
+		#edit a{
+			text-decoration:none;
+		}
+		</style>
+
+<body style="background-color:lightcyan;">
+
+	<br><br>
+
+	{% if messages %}
+		{% for message in messages %}
+			<div class="alert alert-warning alert-dismissible fade show" role="alert">
+				{{ message }}
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		{% endfor %}
+	{% endif %}
+
+	<table class="table table-bordered" id="customers";>
+	<thead>
+		<th> <center> Tasks </center> </th>
+		<th> <center> Created On </center> </th>
+		<th> <center> Status </center> </th>
+		<th> <center> Delete </center> </th>
+	</thead>
+	{% for d in data %}
+		{% if d.status %}
+			<tr class="table-secondary">
+				<td class="striker" id="edit"> <center> <a href="{% url 'edit_task' d.id %}"> {{ d.task }} </a > </center> </td>
+				<td> <center> {{ d.cr_dt }} </center> </td>
+				<td> <center> <a href="{% url 'uncross' d.id %}" style="color:green; text-decoration:none"> Completed </a> </td>
+				<td> <center> <a href="{% url 'delete_task' d.id %}" style="color:red; text-decoration:none"> delete </a> </center> </td>
+			</tr>
+		{% else %}
+			<tr>
+				<td id="edit"> <center> <a href="{% url 'edit_task' d.id %}"> {{ d.task }} </a> </center> </td>
+				<td> <center> {{ d.cr_dt }} </center> </td>
+				<td> <center> <a href="{% url 'cross_off' d.id %}" style="color:yellow; text-decoration:none"> Pending </a> </td>
+				<td> <center> <a href="{% url 'delete_task' d.id %}" style="color:red; text-decoration:none"> delete </a> </center> </td>
+			</tr>
+		{% endif %}
+	{% empty %}
+		<tr>
+				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+					No Task Found
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+		</tr>		
+	{% endfor %}
+	</table>
+</body>
+{% endblock %}
