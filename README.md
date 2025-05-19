@@ -25,19 +25,19 @@ A secure and user-friendly task management application built with Django. This a
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/your-username/todo-django-app.git
+  ```bash
+  git clone https://github.com/your-username/todo-django-app.git
 
 2. Install dependencies
 
-   ```bash
+  ```bash
   pip install -r requirements.txt
 
 3. In td_project/settings.py, update the following values:
   ```bash
   EMAIL_HOST_USER = 'your_email@gmail.com'
   EMAIL_HOST_PASSWORD = 'your_google_app_password'
-
+  ```
 **Note:** You’ll need to generate a Google App Password to use Gmail for email verification and recovery.
 Step-by-step instructions are provided in the section How to <Create a Google App Password for Email Authentication> below.
 
@@ -53,7 +53,7 @@ Step-by-step instructions are provided in the section How to <Create a Google Ap
 6. Access the app in your browser:
   ```bash
   Navigate to: http://127.0.0.1:8000/
-
+  ```
 ## How to Create a Google App Password for Email Authentication
 
 If your app needs to send emails using your Gmail account (e.g., via SMTP), and you have **2-Step Verification** enabled on your Google account, you must create an **App Password** to authenticate securely.
