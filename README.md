@@ -21,6 +21,8 @@ A secure and user-friendly task management application built with Django. This a
 - A Google account (for email verification)
 - Other dependencies listed in `requirements.txt`   
 
+**Note**: This project is hosted live on [PythonAnywhere](http://shriyash.pythonanywhere.com/user_login), where you can try it out
+
 ## Installation
 
 1. Clone the repository:
