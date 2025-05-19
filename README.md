@@ -1,4 +1,4 @@
-# To-Do List Web Application
+# To-Do List Web Application using Django
 
 A secure and user-friendly task management application built with Django. This app allows users to create, manage, and track their tasks efficiently with a focus on security and a smooth user experience.
 
