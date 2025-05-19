@@ -27,11 +27,13 @@ A secure and user-friendly task management application built with Django. This a
 
   ```bash
   git clone https://github.com/your-username/todo-django-app.git
+  ```
 
 2. Install dependencies
 
   ```bash
   pip install -r requirements.txt
+  ```
 
 3. In td_project/settings.py, update the following values:
   ```bash
@@ -45,10 +47,12 @@ Step-by-step instructions are provided in the section How to <Create a Google Ap
   ```bash
   python manage.py makemigrations
   python manage.py migrate
+  ```
 
 5. Run the server:
   ```bash
   python manage.py runserver
+  ```
 
 6. Access the app in your browser:
   ```bash
