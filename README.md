@@ -4,6 +4,8 @@ A secure and user-friendly task management application built with Django. This a
 
 ---
 
+**Note**: This project is hosted live on [PythonAnywhere](http://shriyash.pythonanywhere.com/user_login), where you can try it out
+
 ## Features
 
 - Secure user authentication with email verification  
@@ -20,8 +22,6 @@ A secure and user-friendly task management application built with Django. This a
 - Django  
 - A Google account (for email verification)
 - Other dependencies listed in `requirements.txt`   
-
-**Note**: This project is hosted live on [PythonAnywhere](http://shriyash.pythonanywhere.com/user_login), where you can try it out
 
 ## Installation
 
@@ -60,6 +60,7 @@ Step-by-step instructions are provided in the section How to <Create a Google Ap
   ```bash
   Navigate to: http://127.0.0.1:8000/
   ```
+  
 ## How to Create a Google App Password for Email Authentication
 
 If your app needs to send emails using your Gmail account (e.g., via SMTP), and you have **2-Step Verification** enabled on your Google account, you must create an **App Password** to authenticate securely.
